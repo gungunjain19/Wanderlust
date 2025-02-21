@@ -1,0 +1,152 @@
+body{
+    font-family: "Plus Jakarta Sans", serif !important;
+    display : flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+   flex : 1;
+}
+.heading1 {
+   
+   margin-bottom: 2rem ;
+}
+.navbar {
+    height : 5rem;
+    background-color: white;
+}
+
+.fa-compass-drafting{
+    font-size: 2rem;
+    color : #fe424d;
+    margin-left : 1rem;
+}
+
+.nav-link{
+    color : #222222 !important;
+}
+
+.f-info-links a{
+color : #222222;
+text-decoration: none;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+ }
+ .f-info-links, .f-info-social, .f-info-brand {
+    width : 100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+      
+ }
+ .f-info-social i{
+   margin-right: 1rem;
+   font-size: 1.2rem;
+ }
+ .f-info{
+    display : flex;
+    height : 8rem;
+    background-color: #ebebeb;
+    flex-wrap : wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    text-align: center;
+ }
+
+ /* cards */
+
+ .listing-card{
+    border : none !important;
+    margin-bottom : 2rem;
+ }
+ .card-img-top{
+    border-radius: 1rem !important;
+    width : 100% !important;
+    object-fit: cover;
+ }
+ .card-body{ padding : 0 !important; }
+ .card-text p { font-weight : 400;}
+
+ .listing-link{ text-decoration: none;}
+
+ .card-img-overlay{
+    opacity : 0;
+ }
+ .card-img-overlay:hover{
+    opacity : 0.2;
+    background-color: white;
+ }
+/* buttons */
+ .add, .edit-btn{
+   background-color: #fe424d !important;
+   border : none !important;
+ }
+
+ /* show page */
+ .show-img {
+   height : 30vh;
+ }
+ 
+ .edit-show-btn , .delete-show-btn, .show-submit-btn , .delete-review-btn , .signup-btn, .login-btn{
+   background-color: #fe424d !important;
+   border: none !important;
+ }
+ .show-btns{
+   display : flex;
+ }
+ .show-card {
+   padding-left: 0;
+   padding-right: 0;
+ }
+
+ /* MAP */
+
+ #map {
+   height : 400px;
+   width : 52vw;
+}
+/* modifying home page  */
+.filters{
+   display : flex;
+   flex-wrap: wrap;
+}
+.filter{
+   text-align: center;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  opacity : 0.7;
+}
+.filter:hover{
+   opacity : 1;
+   cursor : pointer;
+}
+
+.tax-info{
+   display : none;
+}
+
+.tax-switch {
+border : 1px solid black;
+border-radius: 1rem;
+height : 3rem;
+padding : 1rem;
+}
+
+.btn-search{
+   background-color: #fe424d !important;
+   color : white !important;
+   border-radius : 25px !important;
+}
+.btn-search:hover{
+   background-color: #fe424d !important;
+   color : white !important;
+}
+.btn-search i {
+   display : inline;
+   margin-right : 0.5rem;
+}
+.search-inp {
+   border-radius : 25px !important;
+   padding : 0 3rem 0 3rem !important;
+}
