@@ -3,7 +3,7 @@ const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 
 main().then((res)=>{
-    console.log("connection succesfull");
+    console.log("connection to DB succesfull");
 })
 .catch(err => console.log(err));
 async function main() {

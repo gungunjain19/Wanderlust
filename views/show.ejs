@@ -1,6 +1,9 @@
 <% layout("/boilerplate") %>
 
-
+<script>
+  const mapToken = "<%= process.env.MAP_TOKEN %>";
+  const mapCoordinates = <%- JSON.stringify(listing.geometry.coordinates) %>;
+</script>
   <div class="row">
     <div class="col-8 offset-3 mt-3">
         <h3><%= listing.title %></h3>
@@ -70,7 +73,7 @@
             <b><p>All Reviews</p></b>
             <div class="row">
             <% for (review of listing.reviews){ %>
-              <div class="card col-5 ms-3 mb-3 ">
+              <div class="card  col-5 ms-3 mb-3 ">
                 <div class="card-body">
                   <h5 class="card-title mt-2 mb-1">@<%= review.author.username %></h5>
                   <p class="starability-result" data-rating="<%= review.rating %>">
@@ -89,27 +92,14 @@
 
 
             <!-- Displaying Map on the website -->
-            <div class="col-5 offset-3 mb-3">
+            <div class="col-8 offset-2 mb-3">
               <h3>Where you'll be</h3>
               <div id="map"></div>
               </div>
            
              </div>
-             
-              <script>
-                 
-                mapToken = "pk.eyJ1IjoiZ3VuZ3VuamFpbjE5IiwiYSI6ImNtNmY1Z2s0bTAxdmwyanNpdncxbHVud3cifQ.WK8KJigVDlA-8QajvVA7yQ";
-                mapboxgl.accessToken = mapToken;
-                  const map = new mapboxgl.Map({
-                      container: 'map', // container ID
-                      center: [74.01, 15.33], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-                      zoom: 9 // starting zoom
-                  });
-                  const marker = new mapboxgl.Marker()
-                  .setLngLat([74.01,15.33])
-                  .addTo(map);
-                  
-              </script>
+             <script src="/map.js"></script>
+            
 
 
         

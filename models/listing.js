@@ -15,8 +15,10 @@ const listingSchema = new schema({
    },
    image : {
     type : String,
-    default : "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNreSUyMHZhY2F0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
-   },
+    set : (v) => v===""?
+     "https://plus.unsplash.com/premium_photo-1661962660197-6c2430fb49a6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      :v,
+     },
    price : {
     type : Number
    },
@@ -38,7 +40,7 @@ const listingSchema = new schema({
       type: {
         type: String, 
         enum: ['Point'], 
-        
+        required:true
       },
       coordinates: {
         type: [Number],

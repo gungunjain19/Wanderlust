@@ -31,7 +31,7 @@ next();
 
 module.exports.isAuthor =  async (req,res,next) => {
     let {id, reviewId} = req.params;
-    let reivew = await Review.findById(reviewId);
+    let review = await Review.findById(reviewId);
     if(!review.author._id.equals(res.locals.currUser._id)){
         req.flash("errorr", "You are not the author of this review");
         return res.redirect(`/listings/${id}`);

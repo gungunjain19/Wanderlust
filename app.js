@@ -1,5 +1,5 @@
-
-
+require('dotenv').config();
+// console.log(process.env.SECRET);
 const express = require("express");
 const mongoose = require('mongoose');
 const app = express();
@@ -28,11 +28,11 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 
-app.use(express.static("public"));
+//app.use(express.static("public"));
 app.use(express.static(path.join(__dirname,"public")));
 
 main().then((res)=>{
-    console.log("connection succesfull");
+    console.log("connection to DB succesfull");
 })
 .catch(err => console.log(err));
 async function main() {
@@ -40,7 +40,7 @@ async function main() {
 }
 
 const sessionOptions = {
-    secret : "mySecretCode",
+    secret :process.env.SECRET,
     resave : false,
     saveUninitialized : true,
     cookie : {
@@ -75,9 +75,6 @@ next();
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/",userRouter);
-
-
-
 
 
 app.all( "*", (req,res,next) => {
